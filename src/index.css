@@ -1,0 +1,298 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #2e2f30;
+}
+
+.app {
+  max-width: 100%;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-col-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-col-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-col-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.button {
+  padding: 0.8rem 3rem;
+  border-radius: 5px;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 700;
+  align-self: flex-start;
+  border: none;
+}
+
+.button:hover {
+  background-color: #232526;
+  color: #e9ecef;
+  border: 3px solid #19a7ce;
+}
+
+/*-------------------------------------*/
+/*-------------Navbar------------------*/
+/*-------------------------------------*/
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 3rem;
+  background-color: #232526;
+}
+
+h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #19a7ce;
+  letter-spacing: 0.5px;
+}
+
+.user-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.user-container img {
+  display: block;
+  width: 4.4rem;
+  border-radius: 50%;
+}
+
+.user-container p {
+  color: #ced4da;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+}
+
+input,
+select {
+  background-color: #232526;
+  color: #e9ecef;
+  border: 2px solid #19a7ce;
+  font-size: 1.4rem;
+  padding: 0.8rem 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+
+/*-------------------------------------*/
+/*-------------Expense-Details------------------*/
+/*-------------------------------------*/
+
+.expense-container {
+  padding: 4.4rem 5.2rem 9.5rem 5.2rem;
+  display: flex;
+  gap: 6.4rem;
+}
+
+.section-expense-details {
+  display: flex;
+  flex-direction: column;
+  padding: 8rem;
+  gap: 2.4rem;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 5px;
+}
+
+.expense-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #adb5bd;
+}
+
+.expense-value {
+  font-size: 3.2rem;
+  font-weight: 600;
+  line-height: 1.1;
+  color: #19a7ce;
+  align-self: center;
+}
+
+/*-------------------------------------*/
+/*-------------Transaction-History------------------*/
+/*-------------------------------------*/
+
+.section-transaction-filter-form {
+  display: flex;
+  padding: 0 5.2rem;
+  justify-content: space-between;
+}
+
+.filter-contents {
+  display: flex;
+  gap: 2rem;
+}
+
+h3 {
+  font-size: 2.4rem;
+  color: #adb5bd;
+  font-weight: 700;
+  align-self: center;
+}
+
+.new {
+  padding: 1.4rem 3rem;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+
+.transaction-list-container {
+  padding: 2.4rem 5.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.transaction-list {
+  padding: 2.4rem 3rem;
+  border-radius: 15px;
+  column-gap: 13rem;
+  row-gap: 2.4rem;
+  justify-content: center;
+  background: linear-gradient(to right, #232526, #414345);
+  /* background: linear-gradient(to top, #232526, #414345); */
+}
+
+.transaction-list-title {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  color: #19a7ce;
+  font-weight: 700;
+  line-height: 1.7;
+  letter-spacing: 1.5px;
+}
+
+.transaction-list-value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #adb5bd;
+  line-height: 1.3;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+}
+
+.select {
+  grid-row: span 2;
+  align-self: center;
+  justify-self: end;
+  border: none;
+  border-radius: 25px;
+}
+
+.select:hover {
+  outline: 3.5px solid #19a7ce;
+  outline-offset: -4px;
+  background-color: #232526;
+  color: #e9ecef;
+}
+
+/*-------------------------------------*/
+/*-------------Transaction-History------------------*/
+/*-------------------------------------*/
+
+.section-transaction-form {
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 8rem 5.4rem;
+}
+
+.transaction-form {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  column-gap: 8rem;
+  row-gap: 3rem;
+  padding: 4.4rem 5.2rem;
+  align-items: center;
+  border-radius: 1.5rem;
+}
+
+.form-title {
+  grid-column: span 3;
+  justify-self: center;
+  align-self: center;
+  font-size: 2.4rem;
+  color: #adb5bd;
+  margin-bottom: 2rem;
+}
+
+.transaction-form label {
+  color: #19a7ce;
+  font-size: 1.7rem;
+  padding: 0.8rem 3rem;
+  font-weight: 500;
+}
+
+.transaction-form input,
+.transaction-form select {
+  grid-column: span 2;
+  text-transform: none;
+  font-size: 1.7rem;
+  color: #adb5bd;
+}
+
+.submit {
+  grid-column: -4/-1;
+  justify-self: end;
+}
+
+.submit:hover,
+.new:hover {
+  border: none;
+  outline: 3px solid #19a7ce;
+  outline-offset: -3px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  margin-right: 8px;
+  filter: invert(0.9);
+}
+
+/*-------------------------------------*/
+/*-------------Transaction-History------------------*/
+/*-------------------------------------*/
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #232526;
+}
+
+footer p {
+  color: #19a7ce;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  padding: 1.4rem 3rem;
+  font-weight: 700;
+}
