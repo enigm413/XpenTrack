@@ -104,6 +104,10 @@ select {
   border-radius: 5px;
 }
 
+select {
+  cursor: pointer;
+}
+
 /*-------------------------------------*/
 /*-------------Expense-Details------------------*/
 /*-------------------------------------*/
@@ -172,7 +176,7 @@ h3 {
   padding: 2.4rem 5.2rem;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 2.4rem;
 }
 
 .transaction-list {
@@ -182,7 +186,10 @@ h3 {
   row-gap: 2.4rem;
   justify-content: center;
   background: linear-gradient(to right, #232526, #414345);
-  /* background: linear-gradient(to top, #232526, #414345); */
+}
+
+.transaction-list:last-child {
+  margin-bottom: 5.2rem;
 }
 
 .transaction-list-title {
@@ -207,15 +214,17 @@ h3 {
   grid-row: span 2;
   align-self: center;
   justify-self: end;
-  border: none;
   border-radius: 25px;
+  outline: 2px solid #19a7ce;
+  outline-offset: -2px;
+  background-color: #232526;
+  color: #e9ecef;
 }
 
 .select:hover {
-  outline: 3.5px solid #19a7ce;
-  outline-offset: -4px;
-  background-color: #232526;
-  color: #e9ecef;
+  background-color: #e9ecef;
+  border: none;
+  color: #232526;
 }
 
 /*-------------------------------------*/
@@ -279,14 +288,26 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   filter: invert(0.9);
 }
 
+.transaction-messages {
+  padding: 2.4rem;
+  font-size: 3.6rem;
+  font-weight: 700;
+  text-align: center;
+  color: #adb5bd;
+}
+
 /*-------------------------------------*/
-/*-------------Transaction-History------------------*/
+/*-------------Footer------------------*/
 /*-------------------------------------*/
 .footer {
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #232526;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin-top: 5.2rem;
 }
 
 footer p {
