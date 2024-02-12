@@ -2,32 +2,33 @@ export function TransactionForm({
   description,
   amount,
   paymentStatus,
+  transactionType,
   setDescription,
   setAmount,
   setPaymentStatus,
-  setIsFormAvailable,
+  setTransactionType,
+  setShowTransactionForm,
   onAddTransaction,
 }) {
-  //Defined current date
-  const currentDate = new Date();
-
-  //Define formatted date with date style as medium
-  const formattedDate = (date) =>
-    date.toLocaleDateString(undefined, { dateStyle: "medium" });
+  // Defined current date
+  const currentDate = new Date().toLocaleDateString(undefined, {
+    dateStyle: "medium",
+  });
 
   //Function to handle submit form
   function handleSubmitForm(event) {
     event.preventDefault();
 
     //Return nothing if description and amount are falsy value
-    if (!description && !amount) return;
+    if (!(description && amount)) return;
 
     //Creating new transaction
     const newTransaction = {
       id: crypto.randomUUID(),
-      expenseDate: formattedDate(currentDate),
+      date: currentDate,
       description,
       amount,
+      transactionType,
       paymentStatus,
     };
 
@@ -36,8 +37,8 @@ export function TransactionForm({
     //Resetting State
     setDescription("");
     setAmount(0);
-    setPaymentStatus("Not Paid");
-    setIsFormAvailable(false);
+    setPaymentStatus("not paid");
+    setShowTransactionForm(false);
   }
 
   return (
@@ -48,16 +49,6 @@ export function TransactionForm({
       >
         <h3 className="form-title">Transaction Form </h3>
 
-        <label>Date of Expense</label>
-        <input type="text" value={formattedDate(currentDate)} disabled />
-
-        <label>Description</label>
-        <input
-          type="text"
-          value={description}
-          onChange={(event) => setDescription(event.target.value)}
-        />
-
         <label>Amount</label>
         <input
           type="text"
@@ -67,13 +58,29 @@ export function TransactionForm({
           }
         />
 
+        <label>Description</label>
+        <input
+          type="text"
+          value={description}
+          onChange={(event) => setDescription(event.target.value)}
+        />
+
+        <label>Transaction Type</label>
+        <select
+          value={transactionType}
+          onChange={(event) => setTransactionType(event.target.value)}
+        >
+          <option value="expense">expense</option>
+          <option value="income"> Income</option>
+        </select>
+
         <label>Payment Status</label>
         <select
           value={paymentStatus}
           onChange={(event) => setPaymentStatus(event.target.value)}
         >
-          <option value="not paid">Not Paid</option>
-          <option value="paid">Paid</option>
+          <option value="not paid">not paid</option>
+          <option value="paid">paid</option>
         </select>
 
         <button className="button submit">Submit</button>

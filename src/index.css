@@ -31,8 +31,8 @@ body {
   grid-template-columns: repeat(3, 1fr);
 }
 
-.grid-col-5 {
-  grid-template-columns: repeat(5, 1fr);
+.grid-col-6 {
+  grid-template-columns: repeat(6, 1fr);
 }
 
 .button {
@@ -49,7 +49,7 @@ body {
 .button:hover {
   background-color: #232526;
   color: #e9ecef;
-  border: 3px solid #19a7ce;
+  border: none;
 }
 
 /*-------------------------------------*/
@@ -108,6 +108,13 @@ select {
   cursor: pointer;
 }
 
+option {
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 5.2rem;
+  color: #adb5bd;
+}
+
 /*-------------------------------------*/
 /*-------------Expense-Details------------------*/
 /*-------------------------------------*/
@@ -154,9 +161,18 @@ select {
   justify-content: space-between;
 }
 
-.filter-contents {
-  display: flex;
-  gap: 2rem;
+.filter-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 5.2rem;
+  row-gap: 0.8rem;
+}
+
+.filter-container label {
+  color: #adb5bd;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.4rem;
 }
 
 h3 {
@@ -167,32 +183,55 @@ h3 {
 }
 
 .new {
-  padding: 1.4rem 3rem;
+  padding: 0.8rem 3rem;
   font-size: 1.4rem;
   text-transform: uppercase;
+  align-self: center;
+  border: none;
+
+  grid-row: 2/3;
 }
 
-.transaction-list-container {
-  padding: 2.4rem 5.2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2.4rem;
+.filter-by {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+.filter-by-options {
+  grid-column: 2/3;
+}
+
+.sort-by-options {
+  grid-column: 1/2;
+  grid-row: 2/3;
 }
 
 .transaction-list {
+  padding: 2.4rem 5.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.transaction-item {
   padding: 2.4rem 3rem;
   border-radius: 15px;
-  column-gap: 13rem;
-  row-gap: 2.4rem;
-  justify-content: center;
+  display: flex;
+  justify-content: space-between;
   background: linear-gradient(to right, #232526, #414345);
 }
 
-.transaction-list:last-child {
-  margin-bottom: 5.2rem;
+.transaction-item:last-child {
+  margin-bottom: 2.4rem;
 }
 
-.transaction-list-title {
+.transaction-item-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.transaction-item-title {
   font-size: 1.4rem;
   text-transform: uppercase;
   color: #19a7ce;
@@ -201,27 +240,32 @@ h3 {
   letter-spacing: 1.5px;
 }
 
-.transaction-list-value {
+.transaction-item-value {
   font-size: 1.6rem;
   font-weight: 700;
   color: #adb5bd;
   line-height: 1.3;
   letter-spacing: 0.5px;
   line-height: 1.3;
+  text-transform: capitalize;
 }
 
-.select {
-  grid-row: span 2;
+.description {
+  flex-basis: 20rem;
+}
+
+.edit {
+  border-radius: 2.4rem;
   align-self: center;
-  justify-self: end;
-  border-radius: 25px;
   outline: 2px solid #19a7ce;
   outline-offset: -2px;
   background-color: #232526;
   color: #e9ecef;
+  padding: 1.2rem 6.4rem;
+  flex-basis: 23rem;
 }
 
-.select:hover {
+.edit:hover {
   background-color: #e9ecef;
   border: none;
   color: #232526;
@@ -234,7 +278,7 @@ h3 {
 .section-transaction-form {
   max-width: 100rem;
   margin: 0 auto;
-  padding: 8rem 5.4rem;
+  padding: 3rem 0 6.4rem 0;
 }
 
 .transaction-form {
@@ -265,7 +309,7 @@ h3 {
 .transaction-form input,
 .transaction-form select {
   grid-column: span 2;
-  text-transform: none;
+  text-transform: capitalize;
   font-size: 1.7rem;
   color: #adb5bd;
 }
@@ -280,12 +324,6 @@ h3 {
   border: none;
   outline: 3px solid #19a7ce;
   outline-offset: -3px;
-}
-
-input[type="date"]::-webkit-calendar-picker-indicator {
-  cursor: pointer;
-  margin-right: 8px;
-  filter: invert(0.9);
 }
 
 .transaction-messages {
@@ -304,10 +342,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   align-items: center;
   justify-content: center;
   background-color: #232526;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  margin-top: 5.2rem;
 }
 
 footer p {

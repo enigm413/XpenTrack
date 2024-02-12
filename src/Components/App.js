@@ -8,12 +8,14 @@ import { TransactionHistory } from "./TransactionHistory";
 
 export default function App() {
   //Define necessary states for App
-  const [isFormAvailable, setIsFormAvailable] = useState(false);
-  const [description, setDescription] = useState("");
+  const [showTransactionForm, setShowTransactionForm] = useState(false);
   const [amount, setAmount] = useState(0);
+  const [description, setDescription] = useState("");
+  const [transactionType, setTransactionType] = useState("expense");
   const [paymentStatus, setPaymentStatus] = useState("Not Paid");
   const [transactionList, setTransactionList] = useState([]);
 
+  //Function to Add Transaction
   function handleAddTransactions(transaction) {
     setTransactionList((transactionList) => [...transactionList, transaction]);
   }
@@ -28,20 +30,24 @@ export default function App() {
       </div>
       <TransactionHistory
         transactionList={transactionList}
-        setIsFormAvailable={setIsFormAvailable}
+        setShowTransactionForm={setShowTransactionForm}
       />
-      {isFormAvailable && (
+      {showTransactionForm && (
         <TransactionForm
           description={description}
           amount={amount}
           paymentStatus={paymentStatus}
+          transactionType={transactionType}
           setDescription={setDescription}
           setAmount={setAmount}
           setPaymentStatus={setPaymentStatus}
-          setIsFormAvailable={setIsFormAvailable}
+          setTransactionType={setTransactionType}
+          setShowTransactionForm={setShowTransactionForm}
           onAddTransaction={handleAddTransactions}
+          transactionList={transactionList}
         />
       )}
+
       <Footer />
     </div>
   );
