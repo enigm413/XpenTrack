@@ -152,6 +152,48 @@ option {
 }
 
 /*-------------------------------------*/
+/*-------------POP-UP------------------*/
+/*-------------------------------------*/
+
+.pop-up-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  max-width: fit-content;
+  border-radius: 5px;
+  border: 2px solid #e9ecef;
+  position: relative;
+  margin: 0 auto;
+  bottom: 23rem;
+  background-color: #e9ecef;
+}
+
+.pop-up-title {
+  font-size: 2.4rem;
+  text-transform: capitalize;
+  background-color: #19a7ce;
+  color: #2c5364;
+  font-weight: 700;
+  padding: 0.8rem;
+}
+
+.pop-up-message {
+  font-size: 2rem;
+  color: #232526;
+  padding: 0.8rem;
+}
+
+.pop-up-button {
+  align-self: end;
+  background-color: #232526;
+  color: #e9ecef;
+  border: 2px solid #19a7ce;
+  font-size: 1.4rem;
+  padding: 0.8rem 3rem;
+  cursor: pointer;
+}
+
+/*-------------------------------------*/
 /*-------------Transaction-History------------------*/
 /*-------------------------------------*/
 
