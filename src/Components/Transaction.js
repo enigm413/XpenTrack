@@ -1,4 +1,4 @@
-export function Transaction({ transactionObj }) {
+export function Transaction({ transactionObj, onDeleteTransaction }) {
   return (
     <li className="transaction-item">
       <div className="transaction-item-container">
@@ -27,7 +27,12 @@ export function Transaction({ transactionObj }) {
         <p className="transaction-item-title">Payment Status</p>
         <p className="transaction-item-value">{transactionObj.paymentStatus}</p>
       </div>
-      <button className="button edit">Edit</button>
+      <button
+        className="button delete"
+        onClick={() => onDeleteTransaction(transactionObj)}
+      >
+        Delete
+      </button>
     </li>
   );
 }

@@ -28,6 +28,14 @@ export default function App() {
     setTransactionList((transactionList) => [...transactionList, transaction]);
   }
 
+  function handleDeleteTransaction(currentTransaction) {
+    setTransactionList(
+      transactionList.filter(
+        (transaction) => transaction.id !== currentTransaction.id
+      )
+    );
+  }
+
   const balanceAmount = transactionList
     .filter((transaction) => transaction.paymentStatus === "paid")
     .reduce(
@@ -60,6 +68,7 @@ export default function App() {
       <TransactionHistory
         transactionList={transactionList}
         setShowTransactionForm={setShowTransactionForm}
+        onDeleteTransaction={handleDeleteTransaction}
       />
       {showPopUp && <PopUp setShowPopUp={setShowPopUp} />}
       {showTransactionForm && (
@@ -74,7 +83,6 @@ export default function App() {
           setTransactionType={setTransactionType}
           setShowTransactionForm={setShowTransactionForm}
           onAddTransaction={handleAddTransactions}
-          transactionList={transactionList}
         />
       )}
       <Footer />

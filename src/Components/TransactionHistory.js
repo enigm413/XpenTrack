@@ -3,8 +3,9 @@ import { Transaction } from "./Transaction";
 import { TransactionFilterForm } from "./TransactionFilterForm";
 
 export function TransactionHistory({
-  setShowTransactionForm,
+  onDeleteTransaction,
   transactionList,
+  setShowTransactionForm,
 }) {
   const [sortValue, setSortValue] = useState("date");
 
@@ -36,6 +37,7 @@ export function TransactionHistory({
             <Transaction
               transactionObj={transaction}
               key={transactionList.id}
+              onDeleteTransaction={onDeleteTransaction}
             />
           ))
         )}

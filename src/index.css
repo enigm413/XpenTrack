@@ -296,7 +296,7 @@ h3 {
   flex-basis: 20rem;
 }
 
-.edit {
+.delete {
   border-radius: 2.4rem;
   align-self: center;
   outline: 2px solid #19a7ce;
@@ -307,7 +307,7 @@ h3 {
   flex-basis: 23rem;
 }
 
-.edit:hover {
+.delete:hover {
   background-color: #e9ecef;
   border: none;
   color: #232526;

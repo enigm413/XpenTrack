@@ -31,6 +31,7 @@ export function TransactionForm({
       transactionType,
       paymentStatus,
     };
+    console.log(newTransaction);
 
     onAddTransaction(newTransaction);
 
